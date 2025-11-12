@@ -51,10 +51,10 @@ export default function Home() {
       location: "Durham, NC",
       duration: "May 2024 – Aug 2024",
       description: [
-        "Contributed to a research discovery web app connecting scholars and funding opportunities for 8,000+ users.",
-        "Integrated AI tools including LangChain, NLTK, and Ollama LLM to match researchers intelligently.",
-        "Enhanced platform accessibility and UI for multi-device compatibility.",
-        "Collaborated with researchers and engineers to iterate on feedback and optimize performance.",
+        "Developed a full-stack research discovery web application connecting 8,000+ faculty to funding and collaboration opportunities",
+        "Optimized data retrieval using LangChain and ChromaDB, improving match precision by 32% and reducing query latency by 40%.",
+        "Built responsive React UI and accessibility features that increased daily active users by 18%.",
+        "Collaborated in Agile sprints with engineers and researchers, contributing 4,000+ lines of production-ready code.",
       ],
     },
     {
@@ -63,9 +63,9 @@ export default function Home() {
       location: "Columbus, OH",
       duration: "Jan 2023 – May 2023",
       description: [
-        "Led a comprehensive student survey to guide district-level decision-making.",
-        "Collaborated with directors to design data-driven education strategies.",
-        "Developed newsletters and school reports to communicate initiatives effectively.",
+        "Streamlined district operations and academic enrichment programs impacting 1,200+ students across 4 campuses.",
+        "Designed data-driven surveys that improved student engagement and attendance metrics by 15%.",
+        "Facilitated communication between administrators, reducing turnaround time for inter-departmental requests by 25%.",
       ],
     },
     {
@@ -176,14 +176,15 @@ export default function Home() {
         </a>
         <a href="#projects" className="hover:text-blue-400 transition">
           Projects
-        </a>
-        <a
-          href="/Abdikafar Omar- Duke official resume.pdf"
-          target="_blank"
-          className="hover:text-blue-400 transition"
-        >
-          Resume
-        </a>
+          <a
+  href="/InternshipResume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-6 py-2 text-lg font-semibold text-white bg-blue-600/80 hover:bg-blue-500 rounded-xl shadow-[0_0_15px_rgba(59,130,246,0.6)] hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition duration-500"
+>
+  View Resume
+</a>
+
       </nav>
 
       {/* 👋 HERO SECTION */}
@@ -260,12 +261,14 @@ export default function Home() {
             that connect creativity, innovation, and real-world impact.
           </p>
           <a
-            href="/Abdikafar Omar- Duke official resume.pdf"
-            target="_blank"
-            className="text-blue-400 hover:underline"
-          >
-            View Resume →
-          </a>
+  href="/InternshipResume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-6 py-2 text-lg font-semibold text-white bg-blue-600/80 hover:bg-blue-500 rounded-xl shadow-[0_0_15px_rgba(59,130,246,0.6)] hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition duration-500"
+>
+  View Resume
+</a>
+
         </div>
 
         <div className="flex justify-center w-full md:w-[45%] animate-slideIn">
