@@ -180,12 +180,12 @@ export default function Home() {
   href="/InternshipResume.pdf"
   target="_blank"
   rel="noopener noreferrer"
-  className="px-6 py-2 text-lg font-semibold text-white bg-blue-600/80 hover:bg-blue-500 rounded-xl shadow-[0_0_15px_rgba(59,130,246,0.6)] hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition duration-500"
+  className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700"
 >
   View Resume
 </a>
+</nav>
 
-      </nav>
 
       {/* 👋 HERO SECTION */}
       <section
