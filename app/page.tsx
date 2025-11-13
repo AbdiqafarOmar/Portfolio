@@ -1,14 +1,13 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { TypeAnimation } from "react-type-animation";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
-
+// EXPERIENCE CARD COMPONENT
 function ExperienceCard({ exp }: { exp: any }) {
   const [open, setOpen] = useState(false);
   return (
@@ -43,7 +42,9 @@ function ExperienceCard({ exp }: { exp: any }) {
   );
 }
 
+// MAIN PAGE COMPONENT
 export default function Home() {
+  // EXPERIENCE SECTION DATA
   const experiences = [
     {
       role: "Software Engineering Intern",
@@ -51,10 +52,11 @@ export default function Home() {
       location: "Durham, NC",
       duration: "May 2024 – Aug 2024",
       description: [
-        "Developed a full-stack research discovery web application connecting 8,000+ faculty to funding and collaboration opportunities",
-        "Optimized data retrieval using LangChain and ChromaDB, improving match precision by 32% and reducing query latency by 40%.",
-        "Built responsive React UI and accessibility features that increased daily active users by 18%.",
-        "Collaborated in Agile sprints with engineers and researchers, contributing 4,000+ lines of production-ready code.",
+        "Engineered a research discovery web app serving 8,000+ scholars, enabling intelligent matching to funding opportunities.",
+        "Integrated LangChain, NLTK, and OpenAI APIs into a recommendation system to improve researcher-match accuracy by 35%.",
+        "Developed and deployed responsive, accessible UI components across devices, improving user adoption and engagement.",
+        "Collaborated with product managers, engineers, and researchers in an Agile workflow, refining features based on user feedback.",
+        "Delivered robust code contributions and code reviews that accelerated the team’s ability to ship reliable features under tight deadlines.",
       ],
     },
     {
@@ -63,24 +65,15 @@ export default function Home() {
       location: "Columbus, OH",
       duration: "Jan 2023 – May 2023",
       description: [
-        "Streamlined district operations and academic enrichment programs impacting 1,200+ students across 4 campuses.",
-        "Designed data-driven surveys that improved student engagement and attendance metrics by 15%.",
-        "Facilitated communication between administrators, reducing turnaround time for inter-departmental requests by 25%.",
-      ],
-    },
-    {
-      role: "Game Master",
-      company: "Escape Artists",
-      location: "Columbus, OH",
-      duration: "Jun 2022 – Nov 2022",
-      description: [
-        "Managed interactive escape-room challenges, ensuring safety and high guest satisfaction.",
-        "Designed engaging game flow experiences under tight operational schedules.",
-        "Collected and analyzed guest feedback to improve engagement and storytelling.",
+        "Streamlined district operations and academic enrichment programs impacting over 1,200 students across four campuses.",
+        "Designed and implemented data-driven surveys that increased student engagement and attendance by 15%.",
+        "Created visual dashboards for administrative insights, optimizing data visibility for leadership and improving decision-making.",
+        "Coordinated between departments to enhance operational efficiency and reduce administrative bottlenecks by 25%.",
       ],
     },
   ];
 
+  // PROJECTS SECTION DATA
   const projects = [
     {
       name: "EcoMind",
@@ -92,12 +85,13 @@ export default function Home() {
     {
       name: "Black Box Auditor",
       description:
-        "Transparency-focused AI auditing tool that visualizes bias and fairness in machine learning models, offering interpretability insights.",
+        "Transparency-focused AI auditing tool that visualizes bias and fairness in machine learning models, providing interpretability insights.",
       tech: "FastAPI · Python · Plotly · Hugging Face",
       link: "https://github.com/AbdiqafarOmar/BlackBox-Auditor",
     },
   ];
 
+  // PARTICLES INIT
   const particlesInit = useCallback(async (engine: any) => {
     await loadFull(engine);
   }, []);
@@ -106,89 +100,85 @@ export default function Home() {
     <main className="min-h-screen text-white bg-black relative overflow-hidden">
       {/* 🌌 PARTICLES */}
       <Particles
-  id="tsparticles"
-  init={particlesInit}
-  options={{
-    background: { color: "#000" },
-    fpsLimit: 60,
-    interactivity: {
-      events: {
-        onHover: { enable: true, mode: "repulse" },
-        resize: true,
-      },
-      modes: {
-        repulse: { distance: 100, duration: 0.4 },
-      },
-    },
-    particles: {
-      number: { value: 180, density: { enable: true, area: 900 } },
-      color: { value: "#3b82f6" },
-      shape: { type: "circle" },
-      opacity: {
-        value: 0.9,
-        random: true,
-        animation: {
-          enable: true,
-          speed: 0.8,
-          minimumValue: 0.3,
-          sync: false,
-        },
-      },
-      size: {
-        value: { min: 1, max: 3 },
-        animation: {
-          enable: true,
-          speed: 1.5,
-          minimumValue: 0.5,
-          sync: false,
-        },
-      },
-      links: {
-        enable: true,
-        color: "#3b82f6",
-        distance: 130,
-        opacity: 0.4,
-        width: 1,
-      },
-      move: {
-        enable: true,
-        speed: 0.6,
-        direction: "none",
-        outModes: { default: "out" },
-      },
-    },
-    detectRetina: true,
-  }}
-  className="absolute inset-0 -z-10"
-/>
-
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          background: { color: "#000" },
+          fpsLimit: 60,
+          interactivity: {
+            events: {
+              onHover: { enable: true, mode: "repulse" },
+              resize: true,
+            },
+            modes: {
+              repulse: { distance: 100, duration: 0.4 },
+            },
+          },
+          particles: {
+            number: { value: 180, density: { enable: true, area: 900 } },
+            color: { value: "#3b82f6" },
+            shape: { type: "circle" },
+            opacity: {
+              value: 0.9,
+              random: true,
+              animation: {
+                enable: true,
+                speed: 0.8,
+                minimumValue: 0.3,
+                sync: false,
+              },
+            },
+            size: {
+              value: { min: 1, max: 3 },
+              animation: {
+                enable: true,
+                speed: 1.5,
+                minimumValue: 0.5,
+                sync: false,
+              },
+            },
+            links: {
+              enable: true,
+              color: "#3b82f6",
+              distance: 130,
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 0.6,
+              direction: "none",
+              outModes: { default: "out" },
+            },
+          },
+          detectRetina: true,
+        }}
+        className="absolute inset-0 -z-10"
+      />
 
       {/* 🧭 NAVBAR */}
-     {/* 🧭 NAVBAR */}
-<nav className="fixed top-0 left-0 w-full flex justify-center gap-12 py-5 bg-black/30 backdrop-blur-md text-gray-300 z-50 text-lg font-medium tracking-wide animate-fadeIn">
-  <a href="#home" className="hover:text-blue-400 transition">
-    Home
-  </a>
-  <a href="#about" className="hover:text-blue-400 transition">
-    About
-  </a>
-  <a href="#experience" className="hover:text-blue-400 transition">
-    Experience
-  </a>
-  <a href="#projects" className="hover:text-blue-400 transition">
-    Projects
-  </a>
-  <a
-    href="/InternshipResume.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 transition"
-  >
-    View Resume
-  </a>
-</nav>
-
-
+      <nav className="fixed top-0 left-0 w-full flex justify-center gap-12 py-5 bg-black/30 backdrop-blur-md text-gray-300 z-50 text-lg font-medium tracking-wide animate-fadeIn">
+        <a href="#home" className="hover:text-blue-400 transition">
+          Home
+        </a>
+        <a href="#about" className="hover:text-blue-400 transition">
+          About
+        </a>
+        <a href="#experience" className="hover:text-blue-400 transition">
+          Experience
+        </a>
+        <a href="#projects" className="hover:text-blue-400 transition">
+          Projects
+        </a>
+        <a
+          href="/InternshipResume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 transition"
+        >
+          View Resume
+        </a>
+      </nav>
 
       {/* 👋 HERO SECTION */}
       <section
@@ -212,24 +202,23 @@ export default function Home() {
           className="text-lg md:text-xl text-gray-300"
         />
         <div className="flex gap-6 mt-6">
-  <a
-    href="https://www.linkedin.com/in/abdikafar-omar-84a1a829a/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-gray-400 hover:text-blue-400 transition-transform transform hover:scale-110"
-  >
-    <FaLinkedin size={30} />
-  </a>
-  <a
-    href="https://github.com/AbdiqafarOmar"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-gray-400 hover:text-blue-400 transition-transform transform hover:scale-110"
-  >
-    <FaGithub size={30} />
-  </a>
-</div>
-
+          <a
+            href="https://www.linkedin.com/in/abdikafar-omar-84a1a829a/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-blue-400 transition-transform transform hover:scale-110"
+          >
+            <FaLinkedin size={30} />
+          </a>
+          <a
+            href="https://github.com/AbdiqafarOmar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-blue-400 transition-transform transform hover:scale-110"
+          >
+            <FaGithub size={30} />
+          </a>
+        </div>
       </section>
 
       {/* 🧠 ABOUT SECTION */}
@@ -254,24 +243,17 @@ export default function Home() {
             (Class of 2027). My experience spans software development, AI
             research, and educational technology shaped through my work as a{" "}
             <span className="font-semibold text-white">
-              Code+ Scholar, Superintendent Intern,
+              Code+ Scholar
             </span>{" "}
             and{" "}
-            <span className="font-semibold text-white">Game Master.</span>
+            <span className="font-semibold text-white">
+              Superintendent Intern.
+            </span>
           </p>
           <p className="text-gray-400 mb-4">
             I’m passionate about building human-centered, data-driven projects
             that connect creativity, innovation, and real-world impact.
           </p>
-          <a
-  href="/InternshipResume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="px-6 py-2 text-lg font-semibold text-white bg-blue-600/80 hover:bg-blue-500 rounded-xl shadow-[0_0_15px_rgba(59,130,246,0.6)] hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition duration-500"
->
-  View Resume
-</a>
-
         </div>
 
         <div className="flex justify-center w-full md:w-[45%] animate-slideIn">
