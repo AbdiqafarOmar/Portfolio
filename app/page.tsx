@@ -164,27 +164,30 @@ export default function Home() {
 
 
       {/* 🧭 NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full flex justify-center gap-12 py-5 bg-black/30 backdrop-blur-md text-gray-300 z-50 text-lg font-medium tracking-wide animate-fadeIn">
-        <a href="#home" className="hover:text-blue-400 transition">
-          Home
-        </a>
-        <a href="#about" className="hover:text-blue-400 transition">
-          About
-        </a>
-        <a href="#experience" className="hover:text-blue-400 transition">
-          Experience
-        </a>
-        <a href="#projects" className="hover:text-blue-400 transition">
-          Projects
-          <a
-  href="/InternshipResume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700"
->
-  View Resume
-</a>
+     {/* 🧭 NAVBAR */}
+<nav className="fixed top-0 left-0 w-full flex justify-center gap-12 py-5 bg-black/30 backdrop-blur-md text-gray-300 z-50 text-lg font-medium tracking-wide animate-fadeIn">
+  <a href="#home" className="hover:text-blue-400 transition">
+    Home
+  </a>
+  <a href="#about" className="hover:text-blue-400 transition">
+    About
+  </a>
+  <a href="#experience" className="hover:text-blue-400 transition">
+    Experience
+  </a>
+  <a href="#projects" className="hover:text-blue-400 transition">
+    Projects
+  </a>
+  <a
+    href="/InternshipResume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 transition"
+  >
+    View Resume
+  </a>
 </nav>
+
 
 
       {/* 👋 HERO SECTION */}
