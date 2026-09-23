@@ -58,6 +58,7 @@ const projects = [
     contribution:
       "Designed the evaluation engine, transparent safety metrics, TF-IDF/K-means response clustering, evidence views, report exports, and CI workflow.",
     stack: ["Python", "Streamlit", "scikit-learn", "Plotly", "GitHub Actions"],
+    live: "https://abdi-blackbox-auditor.streamlit.app",
     github: "https://github.com/AbdiqafarOmar/BlackBox-Auditor",
   },
   {
@@ -191,11 +192,11 @@ export default function Home() {
               <div className="project-links">
                 {project.live && (
                   <a href={project.live} target="_blank" rel="noreferrer">
-                    Open live product <ArrowUpRight size={16} />
+                    Live demo <ArrowUpRight size={16} />
                   </a>
                 )}
                 <a href={project.github} target="_blank" rel="noreferrer">
-                  <Github size={16} /> View source
+                  <Github size={16} /> View code
                 </a>
               </div>
             </article>
