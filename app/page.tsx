@@ -260,12 +260,13 @@ export default function Home() {
 
       <section className="contact-section">
         <div className="contact-copy">
-          <p className="section-kicker">Currently</p>
-          <h2>Looking for a team solving hard, useful problems.</h2>
+          <p className="section-kicker">Available May 2027</p>
+          <h2>Seeking full-time software engineering roles.</h2>
           <p>
-            I&apos;m recruiting for May 2027 software engineering and applied AI
-            roles. If the work involves thoughtful systems, reliable products,
-            and real users, I&apos;d like to hear about it.
+            I&apos;m graduating from Duke in May 2027 and pursuing full-time
+            software engineering and applied AI opportunities. If the work
+            involves thoughtful systems, reliable products, and real users,
+            I&apos;d like to hear about it.
           </p>
         </div>
         <a className="contact-email" href="mailto:abdikafaromar3@gmail.com">
