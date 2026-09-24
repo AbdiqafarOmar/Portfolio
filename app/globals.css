@@ -24,3 +24,7 @@ footer{width:min(1180px,calc(100% - 48px));min-height:100px;margin:0 auto;displa
 @media(max-width:560px){.home-contact{padding:28px 8px 16px}}
 
 @media(min-width:851px){.home-about{height:auto;min-height:auto}.home-about .section-frame{height:auto;padding-block:72px 56px;overflow:visible}}
+
+.home-contact{padding:28px 20px 18px}.contact-panel{min-height:400px;padding:56px 72px}.contact-panel h2{font-size:clamp(2.7rem,4vw,4rem)}
+@media(min-width:851px){.home-about .section-frame{padding-bottom:30px}}
+@media(max-width:560px){.home-contact{padding:20px 8px 12px}.contact-panel{min-height:440px;padding:34px 24px}}
