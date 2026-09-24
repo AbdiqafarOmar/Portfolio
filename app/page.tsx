@@ -1,323 +1,46 @@
-"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Braces, Mail, MapPin, Sparkles } from "lucide-react";
+import { ProjectPreview } from "./components/ProjectPreview";
+import { experiences, projects, skills } from "./data";
 
-import React, { useCallback, useState } from "react";
-import Particles from "react-particles";
-import { loadFull } from "tsparticles";
-import { TypeAnimation } from "react-type-animation";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-
-// EXPERIENCE CARD COMPONENT
-function ExperienceCard({ exp }: { exp: any }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div
-      className="bg-[#0d1117] border border-[#1c1f26] rounded-2xl p-6 shadow-md hover:shadow-blue-400/30 transition-all duration-300 cursor-pointer animate-fadeIn"
-      onClick={() => setOpen(!open)}
-    >
-      <div className="flex justify-between items-center">
-        <div>
-          <h3 className="text-xl font-semibold text-white">{exp.role}</h3>
-          <p className="text-blue-400">{exp.company}</p>
-          <p className="text-gray-400 italic">{exp.location}</p>
-        </div>
-        <div className="text-gray-400 text-sm flex items-center gap-2">
-          <span>{exp.duration}</span>
-          {open ? (
-            <ChevronUp size={18} className="text-blue-400" />
-          ) : (
-            <ChevronDown size={18} className="text-blue-400" />
-          )}
-        </div>
-      </div>
-
-      {open && (
-        <ul className="list-disc list-inside text-gray-300 text-sm mt-4 space-y-1 animate-fadeIn">
-          {exp.description.map((line: string, i: number) => (
-            <li key={i}>{line}</li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-}
-
-// MAIN PAGE COMPONENT
 export default function Home() {
-  // EXPERIENCE SECTION DATA
-  const experiences = [
-    {
-      role: "Software Engineering Intern",
-      company: "Duke Office of Information Technology (Code+ Program)",
-      location: "Durham, NC",
-      duration: "May 2024 – Aug 2024",
-      description: [
-        "Engineered a research discovery web app serving 8,000+ scholars, enabling intelligent matching to funding opportunities.",
-        "Integrated LangChain, NLTK, and OpenAI APIs into a recommendation system to improve researcher-match accuracy by 35%.",
-        "Developed and deployed responsive, accessible UI components across devices, improving user adoption and engagement.",
-        "Collaborated with product managers, engineers, and researchers in an Agile workflow, refining features based on user feedback.",
-        "Delivered robust code contributions and code reviews that accelerated the team’s ability to ship reliable features under tight deadlines.",
-      ],
-    },
-    {
-      role: "Superintendent Intern",
-      company: "KIPP Columbus",
-      location: "Columbus, OH",
-      duration: "Jan 2023 – May 2023",
-      description: [
-        "Streamlined district operations and academic enrichment programs impacting over 1,200 students across four campuses.",
-        "Designed and implemented data-driven surveys that increased student engagement and attendance by 15%.",
-        "Created visual dashboards for administrative insights, optimizing data visibility for leadership and improving decision-making.",
-        "Coordinated between departments to enhance operational efficiency and reduce administrative bottlenecks by 25%.",
-      ],
-    },
-  ];
+  return <main className="home-page">
+    <section className="home-hero page-shell home-section" id="top">
+      <div className="hero-copy">
+        <div className="availability"><span className="availability-dot" /> Graduating May 2027 · Open to full-time roles</div>
+        <p className="hero-kicker">Computer Science at Duke University</p>
+        <h1>I build software for <em>data, automation, and applied AI.</em></h1>
+        <p className="hero-lede">I&apos;m Abdikafar Omar, a computer science student with experience in backend development, AI evaluation, document automation, and semantic search.</p>
+        <div className="hero-actions"><a className="button primary" href="#work">Explore my work <ArrowRight size={17} /></a><a className="button secondary" href="/InternshipResume.pdf" target="_blank" rel="noreferrer">View résumé <ArrowUpRight size={17} /></a></div>
+        <div className="hero-index"><a href="#work"><strong>02</strong><span>Built products</span></a><a href="#experience"><strong>02</strong><span>Technical internships</span></a><a href="#about"><strong>2027</strong><span>Duke graduate</span></a></div>
+      </div>
+      <aside className="hero-visual"><div className="portrait-frame"><Image src="/20240210_duke_life_headshots_020.jpg" alt="Abdikafar Omar" fill priority sizes="(max-width: 800px) 90vw, 420px" /></div><div className="floating-note note-one"><Braces size={18} /><span><strong>Engineering</strong>Backend · data · testing</span></div><div className="floating-note note-two"><Sparkles size={17} /> Applied AI</div></aside>
+    </section>
 
-  // PROJECTS SECTION DATA
-  const projects = [
-    {
-      name: "EcoMind",
-      description:
-        "AI-powered sustainability dashboard that predicts environmental trends and recommends eco-friendly actions using real-world data.",
-      tech: "Python · Streamlit · OpenAI API · Plotly",
-      link: "https://github.com/AbdiqafarOmar/EcoMind",
-    },
-    {
-      name: "Black Box Auditor",
-      description:
-        "Transparency-focused AI auditing tool that visualizes bias and fairness in machine learning models, providing interpretability insights.",
-      tech: "FastAPI · Python · Plotly · Hugging Face",
-      link: "https://github.com/AbdiqafarOmar/BlackBox-Auditor",
-    },
-  ];
+    <section className="home-section home-work" id="work">
+      <div className="page-shell section-frame">
+        <header className="home-heading"><div><p className="eyebrow">Selected work</p><h2>Software projects<br />and case studies.</h2></div><p>Each case study explains the problem, implementation, technical decisions, testing, and final result.</p></header>
+        <div className="project-grid">{projects.map(project => <ProjectPreview key={project.slug} project={project} />)}</div>
+      </div>
+    </section>
 
-  // PARTICLES INIT
-  const particlesInit = useCallback(async (engine: any) => {
-    await loadFull(engine);
-  }, []);
+    <section className="home-section home-experience" id="experience">
+      <div className="page-shell section-frame experience-frame">
+        <header className="home-heading light-heading"><div><p className="eyebrow">Experience</p><h2>Software engineering and<br />AI automation.</h2></div><p>My internship experience includes insurance document automation, semantic search, backend development, and workflow testing.</p></header>
+        <div className="home-experience-grid">{experiences.map((item, index) => <article key={item.role}><span>0{index + 1} · {item.period}</span><h3>{item.role}</h3><p className="company">{item.company}</p><p>{item.intro}</p><Link href="/experience">See experience details <ArrowUpRight size={16} /></Link></article>)}</div>
+      </div>
+    </section>
 
-  return (
-    <main className="min-h-screen text-white bg-black relative overflow-hidden">
-      {/* 🌌 PARTICLES */}
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          background: { color: "#000" },
-          fpsLimit: 60,
-          interactivity: {
-            events: {
-              onHover: { enable: true, mode: "repulse" },
-              resize: true,
-            },
-            modes: {
-              repulse: { distance: 100, duration: 0.4 },
-            },
-          },
-          particles: {
-            number: { value: 180, density: { enable: true, area: 900 } },
-            color: { value: "#3b82f6" },
-            shape: { type: "circle" },
-            opacity: {
-              value: 0.9,
-              random: true,
-              animation: {
-                enable: true,
-                speed: 0.8,
-                minimumValue: 0.3,
-                sync: false,
-              },
-            },
-            size: {
-              value: { min: 1, max: 3 },
-              animation: {
-                enable: true,
-                speed: 1.5,
-                minimumValue: 0.5,
-                sync: false,
-              },
-            },
-            links: {
-              enable: true,
-              color: "#3b82f6",
-              distance: 130,
-              opacity: 0.4,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              speed: 0.6,
-              direction: "none",
-              outModes: { default: "out" },
-            },
-          },
-          detectRetina: true,
-        }}
-        className="absolute inset-0 -z-10"
-      />
+    <section className="home-section home-about" id="about">
+      <div className="page-shell section-frame about-frame">
+        <div className="about-home-copy"><p className="eyebrow">About</p><h2>Computer science student focused on software engineering and applied AI.</h2><p>I&apos;m pursuing a B.S. in Computer Science at Duke University with a concentration in Artificial Intelligence and Machine Learning. I&apos;m interested in backend systems, evaluation, automation, and practical applications of machine learning.</p><div className="about-facts"><span><MapPin size={16} />Durham, NC</span><span>Duke University · B.S. Computer Science · AI &amp; Machine Learning</span></div><Link className="text-link" href="/about">More about my background <ArrowUpRight size={17} /></Link></div>
+        <div className="skills-home"><p>Technical toolkit</p><div className="skill-grid">{skills.map(skill => <span key={skill}>{skill}</span>)}</div></div>
+      </div>
+    </section>
 
-      {/* 🧭 NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full flex justify-center gap-12 py-5 bg-black/30 backdrop-blur-md text-gray-300 z-50 text-lg font-medium tracking-wide animate-fadeIn">
-        <a href="#home" className="hover:text-blue-400 transition">
-          Home
-        </a>
-        <a href="#about" className="hover:text-blue-400 transition">
-          About
-        </a>
-        <a href="#experience" className="hover:text-blue-400 transition">
-          Experience
-        </a>
-        <a href="#projects" className="hover:text-blue-400 transition">
-          Projects
-        </a>
-        <a
-          href="/InternshipResume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 transition"
-        >
-          View Resume
-        </a>
-      </nav>
-
-      {/* 👋 HERO SECTION */}
-      <section
-        id="home"
-        className="flex flex-col items-center justify-center text-center min-h-screen animate-fadeIn"
-      >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-slideUp">
-          Hi, I’m Abdikafar Omar
-        </h1>
-        <TypeAnimation
-          sequence={[
-            "A passionate problem solver",
-            1500,
-            "An aspiring software engineer",
-            1500,
-            "A creative thinker",
-            1500,
-          ]}
-          wrapper="p"
-          repeat={Infinity}
-          className="text-lg md:text-xl text-gray-300"
-        />
-        <div className="flex gap-6 mt-6">
-          <a
-            href="https://www.linkedin.com/in/abdikafar-omar-84a1a829a/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-400 transition-transform transform hover:scale-110"
-          >
-            <FaLinkedin size={30} />
-          </a>
-          <a
-            href="https://github.com/AbdiqafarOmar"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-400 transition-transform transform hover:scale-110"
-          >
-            <FaGithub size={30} />
-          </a>
-        </div>
-      </section>
-
-      {/* 🧠 ABOUT SECTION */}
-      <section
-        id="about"
-        className="px-6 md:px-20 py-24 flex flex-col md:flex-row items-center justify-between gap-16 animate-fadeIn"
-      >
-        <div className="max-w-xl">
-          <h2 className="text-4xl font-bold mb-8">
-            About <span className="text-blue-400">Me</span>
-          </h2>
-          <p className="text-gray-300 leading-relaxed mb-6">
-            I’m <span className="font-semibold text-white">Abdikafar Omar</span>,
-            a Duke University student from Columbus, Ohio, pursuing a{" "}
-            <span className="font-semibold text-white">
-              B.S. in Computer Science
-            </span>{" "}
-            with a concentration in{" "}
-            <span className="font-semibold text-white">
-              Artificial Intelligence and Machine Learning
-            </span>{" "}
-            (Class of 2027). My experience spans software development, AI
-            research, and educational technology shaped through my work as a{" "}
-            <span className="font-semibold text-white">
-              Code+ Scholar
-            </span>{" "}
-            and{" "}
-            <span className="font-semibold text-white">
-              Superintendent Intern.
-            </span>
-          </p>
-          <p className="text-gray-400 mb-4">
-            I’m passionate about building human-centered, data-driven projects
-            that connect creativity, innovation, and real-world impact.
-          </p>
-        </div>
-
-        <div className="flex justify-center w-full md:w-[45%] animate-slideIn">
-          <img
-            src="/20240210_duke_life_headshots_020.jpg"
-            alt="Abdikafar Omar"
-            className="w-[280px] h-[350px] object-cover rounded-2xl shadow-lg shadow-blue-400/30 hover:shadow-blue-400/50 transition-all duration-700 ease-in-out"
-          />
-        </div>
-      </section>
-
-      {/* 💼 EXPERIENCE SECTION */}
-      <section
-        id="experience"
-        className="relative px-6 md:px-20 py-24 animate-fadeIn"
-      >
-        <h2 className="text-4xl font-bold text-center mb-12">
-          My <span className="text-blue-400">Experiences</span>
-        </h2>
-        <div className="max-w-4xl mx-auto space-y-6">
-          {experiences.map((exp, idx) => (
-            <ExperienceCard key={idx} exp={exp} />
-          ))}
-        </div>
-      </section>
-
-      {/* 🧩 PROJECTS SECTION */}
-      <section
-        id="projects"
-        className="relative px-6 md:px-20 py-24 animate-fadeIn"
-      >
-        <h2 className="text-4xl font-bold text-center mb-12">
-          Featured <span className="text-blue-400">Projects</span>
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {projects.map((proj, i) => (
-            <div
-              key={i}
-              className="bg-[#0d1117] border border-[#1c1f26] rounded-2xl p-6 shadow-md hover:shadow-blue-400/30 transition-all duration-300 animate-fadeIn"
-            >
-              <h3 className="text-2xl font-semibold mb-2 text-white">
-                {proj.name}
-              </h3>
-              <p className="text-gray-300 mb-3">{proj.description}</p>
-              <p className="text-blue-400 text-sm mb-3">{proj.tech}</p>
-              <a
-                href={proj.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:underline"
-              >
-                View Project →
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 🦋 FOOTER */}
-      <footer className="text-center text-gray-400 text-sm py-8 border-t border-gray-800 animate-fadeIn">
-        © {new Date().getFullYear()} Abdikafar Omar — Designed & Built with
-        Next.js + Tailwind
-      </footer>
-    </main>
-  );
+    <section className="home-section home-contact" id="contact">
+      <div className="contact-panel"><div><p className="eyebrow">Available May 2027</p><h2>Open to full-time opportunities.</h2><p>I&apos;m seeking software engineering and applied AI roles beginning after graduation in May 2027.</p></div><a href="mailto:abdikafaromar3@gmail.com"><Mail size={22} /><span><strong>Contact me</strong><small>abdikafaromar3@gmail.com</small></span><ArrowUpRight size={21} /></a></div>
+    </section>
+  </main>;
 }
