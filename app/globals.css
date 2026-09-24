@@ -19,3 +19,6 @@ footer{width:min(1180px,calc(100% - 48px));min-height:100px;margin:0 auto;displa
 @media(min-width:851px) and (min-height:760px){.home-section{min-height:calc(100svh - 72px)}.home-work,.home-experience,.home-about{height:calc(100svh - 72px);min-height:720px}.home-work .section-frame,.home-experience .section-frame,.home-about .section-frame{overflow:hidden}}
 @media(max-width:850px){.home-heading,.about-frame,.contact-panel{grid-template-columns:1fr}.home-heading{gap:18px}.home-work,.home-experience,.home-about{padding-block:70px}.home-experience-grid{grid-template-columns:1fr}.contact-panel{gap:35px}}
 @media(max-width:560px){.section-frame{padding-block:55px}.home-heading h2,.about-home-copy h2,.contact-panel h2{font-size:2.8rem}.home-work .project-preview{min-height:500px;padding:26px 22px}.home-contact{padding:8px}.contact-panel{min-height:540px;padding:35px 24px}.contact-panel>a{grid-template-columns:auto 1fr}.contact-panel>a>svg:last-child{display:none}}
+
+.home-contact{min-height:auto;padding:44px 20px 24px}
+@media(max-width:560px){.home-contact{padding:28px 8px 16px}}
