@@ -22,3 +22,5 @@ footer{width:min(1180px,calc(100% - 48px));min-height:100px;margin:0 auto;displa
 
 .home-contact{min-height:auto;padding:44px 20px 24px}
 @media(max-width:560px){.home-contact{padding:28px 8px 16px}}
+
+@media(min-width:851px){.home-about{height:auto;min-height:auto}.home-about .section-frame{height:auto;padding-block:72px 56px;overflow:visible}}
