@@ -34,7 +34,7 @@ export default function Home() {
 
     <section className="home-section home-about" id="about">
       <div className="page-shell section-frame about-frame">
-        <div className="about-home-copy"><p className="eyebrow">About</p><h2>I build at the intersection of software engineering and applied AI.</h2><p>I&apos;m a Duke computer science student who enjoys turning ambiguous technical problems into products that can be tested, explained, and trusted.</p><div className="about-facts"><span><MapPin size={16} />Durham, NC</span><span>Duke University · B.A. Computer Science</span></div><Link className="text-link" href="/about">Read more about me <ArrowUpRight size={17} /></Link></div>
+        <div className="about-home-copy"><p className="eyebrow">About</p><h2>I build at the intersection of software engineering and applied AI.</h2><p>I&apos;m pursuing a B.S. in Computer Science at Duke University with a concentration in Artificial Intelligence and Machine Learning. I enjoy turning ambiguous technical problems into products that can be tested, explained, and trusted.</p><div className="about-facts"><span><MapPin size={16} />Durham, NC</span><span>Duke University · B.S. Computer Science · AI &amp; Machine Learning</span></div><Link className="text-link" href="/about">Read more about me <ArrowUpRight size={17} /></Link></div>
         <div className="skills-home"><p>Technical toolkit</p><div className="skill-grid">{skills.map(skill => <span key={skill}>{skill}</span>)}</div></div>
       </div>
     </section>
