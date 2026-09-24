@@ -1,0 +1,3 @@
+import { ProjectPreview } from "../components/ProjectPreview";
+import { projects } from "../data";
+export default function WorkPage() { return <main className="page-shell inner-page"><header className="page-heading"><p className="eyebrow">Selected work</p><h1>Products built to be used, tested, and understood.</h1><p>Choose a project to see the problem, the system I designed, what I personally built, and the working result.</p></header><section className="project-grid" aria-label="Selected projects">{projects.map(project => <ProjectPreview key={project.slug} project={project} />)}</section></main>; }

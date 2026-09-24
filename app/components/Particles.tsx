@@ -33,7 +33,7 @@ export default function Particles() {
 
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
-      for (let p of particles) {
+      for (const p of particles) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 3);

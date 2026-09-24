@@ -3,7 +3,16 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-export default function ExperienceCard({ exp }: { exp: any }) {
+type Experience = {
+  logo: React.ReactNode;
+  role: string;
+  company: string;
+  location: string;
+  duration: string;
+  description: string[];
+};
+
+export default function ExperienceCard({ exp }: { exp: Experience }) {
   const [open, setOpen] = useState(false);
 
   return (
