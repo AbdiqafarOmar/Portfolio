@@ -40,7 +40,7 @@ export default function Home() {
     </section>
 
     <section className="home-section home-contact" id="contact">
-      <div className="contact-panel"><div><p className="eyebrow">Available May 2027</p><h2>Open to full-time opportunities.</h2><p>I&apos;m seeking software engineering and applied AI roles beginning after graduation in May 2027.</p></div><a href="mailto:abdikafaromar3@gmail.com"><Mail size={22} /><span><strong>Contact me</strong><small>abdikafaromar3@gmail.com</small></span><ArrowUpRight size={21} /></a></div>
+      <div className="contact-panel"><div><p className="eyebrow">Available May 2027</p><h2>Open to full-time opportunities.</h2><p>I&apos;m seeking software engineering and applied AI roles beginning after graduation in May 2027.</p></div><a href="mailto:abdikafar.omar@duke.edu"><Mail size={22} /><span><strong>Contact me</strong><small>abdikafar.omar@duke.edu</small></span><ArrowUpRight size={21} /></a></div>
     </section>
   </main>;
 }

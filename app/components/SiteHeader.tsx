@@ -9,6 +9,6 @@ export function SiteHeader() {
       <Link href="/#experience">Experience</Link>
       <Link href="/#about">About</Link>
     </nav>
-    <a className="header-contact" href="mailto:abdikafaromar3@gmail.com">Let&apos;s talk <ArrowUpRight size={16} /></a>
+    <a className="header-contact" href="mailto:abdikafar.omar@duke.edu">Let&apos;s talk <ArrowUpRight size={16} /></a>
   </header>;
 }
